@@ -12,12 +12,15 @@ improves the video player that is used for lecture recordings by adding new cont
 - clicks on pointless buttons telling you to login (optional)
 - automatically switches to english (optional)
 
+## toggle features
+You can toggle those features above by clicking on the extension's icon
 
 ## code expert
 The codeexpert.ahk file has 3 macros that allow you to:
 - duplicate the selected line
 - comment the selected line
 - write a print statement
+
 
 
 # How to install
