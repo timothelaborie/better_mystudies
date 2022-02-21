@@ -1,0 +1,36 @@
+{
+  "name": "better_mystudies",
+  "version": "1.0",
+  "description": "",
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "options_page": "options.html",
+  "background": {
+    "scripts": ["jquery-3.6.0.min.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+ {
+  "matches": ["https://www.lehrbetrieb.ethz.ch/myStudies/studSessionException.view*", "https://www.lehrbetrieb.ethz.ch/myStudies/login.view*","https://moodle-app2.let.ethz.ch/*","https://video.ethz.ch/etc/*"],
+  "js": ["content.js"],
+  "run_at": "document_end",
+  "all_frames": true
+ }
+], 
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "better_mystudies_popup",
+    "default_icon": {
+      "16": "images/eth16.png",
+      "32": "images/eth32.png",
+      "48": "images/eth48.png",
+      "128": "images/eth128.png"
+    }
+  },
+  "icons": {
+      "16": "images/eth16.png",
+      "32": "images/eth32.png",
+      "48": "images/eth48.png",
+      "128": "images/eth128.png"
+  },
+  "manifest_version": 2
+}
