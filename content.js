@@ -63,7 +63,15 @@ window.onload = function () {
 			
 			
 			if(page_is_english){
-				location.href = location.href + "&lang=en";
+				//go through every element with class "dropdown-item" and check if the title attribute contains "English"
+				var elements = document.getElementsByClassName("dropdown-item");
+				for (var i = 0; i < elements.length; i++) {
+					if (elements[i].title.includes("English")) {
+						console.log('switching to english');
+						elements[i].click();
+					}
+				}
+				
 			}
 
 
