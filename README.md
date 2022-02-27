@@ -1,7 +1,7 @@
 # Features
 
 ## Video Player
-improves the video player that is used for lecture recordings by adding new controls:
+Improves the video player that is used for lecture recordings by adding new controls:
 
 - up arrow changes speed to 2x
 - down arrow changes speed to 1x
@@ -9,8 +9,8 @@ improves the video player that is used for lecture recordings by adding new cont
 - right arrow goes forward by 5 seconds
 
 ## Mystudies and Moodle
-- clicks on pointless buttons telling you to login (optional)
-- automatically switches to english (optional)
+- Clicks on pointless buttons telling you to login (optional)
+- Automatically switches to english (optional)
 
 ## Toggle features
 You can toggle those features above by clicking on the extension's icon

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log('popup.js loaded');
   // console.log($('#video'));
 
-  const array = ["english", "buttons", "video"]
+  const array = ["english", "buttons"]
   array.forEach(function (item, index) {
     // console.log(item, index);
     chrome.storage.sync.get([item], function (result) {
@@ -27,26 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
     chrome.storage.sync.set({ buttons: ($('#buttons')[0].checked) }, function () {
       // console.log('buttons is now set to ' + on);
     });
-    chrome.storage.sync.set({ video: ($('#video')[0].checked) }, function () {
-      // console.log('video is now set to ' + on);
-    });
+
 
   });
 
-
-  // var checkPageButton = document.getElementById('clickIt');
-  // checkPageButton.addEventListener('click', function() {
-  //   chrome.tabs.getSelected(null, function(tab) {
-  //     alert("Hello..! It's my first chrome extension.");
-  //     $("h1").text("Hello..! It's my first chrome extension.");
-  //   });
-  // }, false);
-
-  // var video = $('#video').is(":checked") ? true : false;
-  // console.log(video);
-  // chrome.storage.sync.set({ video: on }, function () {
-  //   console.log('Value is set to ' + on);
-  // });
 
 
 }, false);

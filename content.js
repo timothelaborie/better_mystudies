@@ -1,16 +1,12 @@
 window.onload = function () {
 
 
-
-
-
-
 	function sleep(ms) {
 		return new Promise(resolve => setTimeout(resolve, ms));
 	}
 
 	async function demo() {
-		console.log("better_mystudies loaded");
+		console.log("ETH improvements loaded");
 
 		var english = true;
 		chrome.storage.sync.get(['english'], function (result) {
@@ -24,18 +20,12 @@ window.onload = function () {
 			if(result.buttons == undefined)return;
 			buttons = result.buttons;
 		});
-		var video = true;
-		chrome.storage.sync.get(['video'], function (result) {
-			console.log('content.js: video currently is ' + result.video);
-			if(result.video == undefined)return;
-			video = result.video;
-		});
 
 		await sleep(400);
 		if (location.href.includes("quiz") || location.href.includes("feedback") || location.href.includes("test") || location.href.includes("exam") || location.href.includes("prüfung")) return;
 
 
-
+		//the following code is used to skip useless buttons and switch to english mode
 		if (english && location.href.includes("https://www.lehrbetrieb.ethz.ch/myStudies/studSessionException.view")) {
 			console.log('switching to english');
 			try { document.querySelectorAll('a[href="?lang=en"]')[0].click(); } catch { }
@@ -73,9 +63,6 @@ window.onload = function () {
 				}
 				
 			}
-
-
-
 			
 		}
 
@@ -84,24 +71,6 @@ window.onload = function () {
 			try { document.querySelectorAll('button.btn.btn-primary.btn-block')[0].click(); } catch { }
 		}
 
-		if (video && location.href.includes("https://video.ethz.ch/etc/")) {
-			console.log('video detected, adding features');
-
-			var scriptContent = "document.onkeydown = checkKey; " +
-				"function checkKey(e) {" +
-				" e = e || window.event;" +
-				" if (e.keyCode == '38') { paella.player.videoContainer.setPlaybackRate(2); }" +
-				" else if (e.keyCode == '40') { paella.player.videoContainer.setPlaybackRate(1.25); }" +
-				" else if (e.keyCode == '37') { paella.player.videoContainer.currentTime() .then(function(currentTime) { paella.player.videoContainer.seekToTime(currentTime - 5); }); } " +
-				" else if (e.keyCode == '39') { paella.player.videoContainer.currentTime() .then(function(currentTime) { paella.player.videoContainer.seekToTime(currentTime + 5); }); } }";
-			var script = document.createElement('script');
-			script.id = 'tmpScript';
-			script.appendChild(document.createTextNode(scriptContent));
-			(document.body || document.head || document.documentElement).appendChild(script);
-
-
-
-		}
 
 
 		console.log('done');

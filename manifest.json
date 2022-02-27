@@ -1,24 +1,44 @@
 {
-  "name": "better_mystudies",
+  "name": "ETH improvements",
   "version": "1.0",
   "description": "",
-  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "permissions": [
+    "storage"
+  ],
   "options_page": "options.html",
-  "background": {
-    "scripts": ["jquery-3.6.0.min.js"],
-    "persistent": false
-  },
   "content_scripts": [
- {
-  "matches": ["https://www.lehrbetrieb.ethz.ch/myStudies/studSessionException.view*", "https://www.lehrbetrieb.ethz.ch/myStudies/login.view*","https://moodle-app2.let.ethz.ch/*","https://video.ethz.ch/etc/*"],
-  "js": ["content.js"],
-  "run_at": "document_end",
-  "all_frames": true
- }
-], 
-  "browser_action": {
+    {
+      "matches": [
+        "https://www.lehrbetrieb.ethz.ch/myStudies/studSessionException.view*",
+        "https://www.lehrbetrieb.ethz.ch/myStudies/login.view*",
+        "https://moodle-app2.let.ethz.ch/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "https://video.ethz.ch/etc/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "inject.js"
+      ],
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [ "video.js" ],
+      "matches": [ "https://*/*" ]
+    }
+  ],
+  "action": {
     "default_popup": "popup.html",
-    "default_title": "better_mystudies_popup",
+    "default_title": "ETH improvements",
     "default_icon": {
       "16": "images/eth16.png",
       "32": "images/eth32.png",
@@ -27,10 +47,10 @@
     }
   },
   "icons": {
-      "16": "images/eth16.png",
-      "32": "images/eth32.png",
-      "48": "images/eth48.png",
-      "128": "images/eth128.png"
+    "16": "images/eth16.png",
+    "32": "images/eth32.png",
+    "48": "images/eth48.png",
+    "128": "images/eth128.png"
   },
-  "manifest_version": 2
+  "manifest_version": 3
 }
