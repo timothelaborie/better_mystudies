@@ -31,10 +31,13 @@ window.onload = function () {
 			try { document.querySelectorAll('a[href="?lang=en"]')[0].click(); } catch { }
 			await sleep(400);
 			console.log('skipping useless button');
-			try { document.querySelectorAll('a[href="index_en.jsp"]')[0].click(); } catch { }
+			try { document.querySelectorAll('input[value="Start"]')[0].click(); } catch { }
 		}
 
 		if (buttons && location.href.includes("https://www.lehrbetrieb.ethz.ch/myStudies/login.view")) {
+			console.log('switching to english');
+			try { document.querySelectorAll('a[href="?lang=en"]')[0].click(); } catch { }
+			await sleep(400);
 			console.log('skipping useless button');
 			try { document.querySelectorAll('input[value="Start"]')[0].click(); } catch { }
 		}
@@ -50,8 +53,6 @@ window.onload = function () {
 					page_is_english = true;
 				}
 			}
-			
-			
 			if(page_is_english){
 				//go through every element with class "dropdown-item" and check if the title attribute contains "English"
 				var elements = document.getElementsByClassName("dropdown-item");
@@ -63,7 +64,6 @@ window.onload = function () {
 				}
 				
 			}
-			
 		}
 
 		if (buttons && location.href.includes("https://moodle-app2.let.ethz.ch/auth/shibboleth/login.php")) {
