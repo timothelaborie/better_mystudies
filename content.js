@@ -31,7 +31,8 @@ window.onload = function () {
 			try { document.querySelectorAll('a[href="?lang=en"]')[0].click(); } catch { }
 			await sleep(400);
 			console.log('skipping useless button');
-			try { document.querySelectorAll('input[value="Start"]')[0].click(); } catch { }
+			// try { document.querySelectorAll('input[value="Start"]')[0].click(); } catch { }
+			try { document.querySelectorAll('a[href="index_en.jsp"]')[0].click(); } catch { }
 		}
 
 		if (buttons && location.href.includes("https://www.lehrbetrieb.ethz.ch/myStudies/login.view")) {
