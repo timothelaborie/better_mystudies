@@ -27,17 +27,16 @@ window.onload = function () {
 
 		//the following code is used to skip useless buttons and switch to english mode
 		if (english && location.href.includes("https://www.lehrbetrieb.ethz.ch/myStudies/studSessionException.view")) {
-			console.log('switching to english');
-			try { document.querySelectorAll('a[href="?lang=en"]')[0].click(); } catch { }
+			// console.log('switching to english');
+			// try { document.querySelectorAll('a[href="?lang=en"].engl')[0].click(); } catch { }
 			await sleep(400);
 			console.log('skipping useless button');
-			// try { document.querySelectorAll('input[value="Start"]')[0].click(); } catch { }
-			try { document.querySelectorAll('a[href="index_en.jsp"]')[0].click(); } catch { }
+			try { document.querySelectorAll('a[href="index.jsp"]')[0].click(); } catch { }
 		}
 
 		if (buttons && location.href.includes("https://www.lehrbetrieb.ethz.ch/myStudies/login.view")) {
 			console.log('switching to english');
-			try { document.querySelectorAll('a[href="?lang=en"]')[0].click(); } catch { }
+			try { document.querySelectorAll('a[href="?lang=en"].engl')[0].click(); } catch { }
 			await sleep(400);
 			console.log('skipping useless button');
 			try { document.querySelectorAll('input[value="Start"]')[0].click(); } catch { }
