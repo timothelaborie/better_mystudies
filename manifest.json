@@ -11,7 +11,8 @@
       "matches": [
         "https://www.lehrbetrieb.ethz.ch/myStudies/studSessionException.view*",
         "https://www.lehrbetrieb.ethz.ch/myStudies/login.view*",
-        "https://moodle-app2.let.ethz.ch/*"
+        "https://moodle-app2.let.ethz.ch/*",
+        "https://aai-logon.ethz.ch/idp/profile/SAML2/*"
       ],
       "js": [
         "content.js"

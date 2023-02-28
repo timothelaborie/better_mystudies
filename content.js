@@ -45,15 +45,15 @@ window.onload = function () {
 
 		if (english && location.href.includes("https://moodle-app2.let.ethz.ch/")) {
 			console.log('moodle english');
-			var page_is_english = false;
+			var page_is_german = false;
 			//go through every element with class "media-body" and check if it contains "Startseite"
 			var elements = document.getElementsByClassName("media-body");
 			for (var i = 0; i < elements.length; i++) {
 				if (elements[i].innerText.includes("Startseite")) {
-					page_is_english = true;
+					page_is_german = true;
 				}
 			}
-			if(page_is_english){
+			if(page_is_german){
 				//go through every element with class "dropdown-item" and check if the title attribute contains "English"
 				var elements = document.getElementsByClassName("dropdown-item");
 				for (var i = 0; i < elements.length; i++) {
@@ -70,6 +70,7 @@ window.onload = function () {
 			console.log('skipping useless moodle login button');
 			try { document.querySelectorAll('button.btn.btn-primary.btn-block')[0].click(); } catch { }
 		}
+
 
 
 

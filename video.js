@@ -3,6 +3,7 @@
 async function onload() {
     console.log("video.js adding features");
 
+    let rate = 1;
 
     document.onkeydown = checkKey;
 
@@ -12,11 +13,17 @@ async function onload() {
 
         if (e.keyCode == '38') {
             // up arrow
-            paella.player.videoContainer.setPlaybackRate(2);
+            rate+=0.25;
+            if(rate > 2)rate = 2;
+            console.log(rate);
+            paella.player.videoContainer.setPlaybackRate(rate);
         }
         else if (e.keyCode == '40') {
             // down arrow
-            paella.player.videoContainer.setPlaybackRate(1.25);
+            rate-=0.25;
+            if(rate < 1)rate = 1;
+            console.log(rate);
+            paella.player.videoContainer.setPlaybackRate(rate);
         }
         else if (e.keyCode == '37') {
             // left arrow
