@@ -29,14 +29,14 @@ async function onload() {
             // left arrow
             paella.player.videoContainer.currentTime()
                 .then(function (currentTime) {
-                    paella.player.videoContainer.seekToTime(currentTime - 5);
+                    paella.player.videoContainer.seekToTime(currentTime + 0);
                 });
         }
         else if (e.keyCode == '39') {
             // right arrow
             paella.player.videoContainer.currentTime()
                 .then(function (currentTime) {
-                    paella.player.videoContainer.seekToTime(currentTime + 5);
+                    paella.player.videoContainer.seekToTime(currentTime - 0);
                 });
         }
 
