@@ -40,7 +40,7 @@ window.onload = function () {
 		});
 
 		await sleep(400);
-		if (location.href.includes("quiz") || location.href.includes("feedback") || location.href.includes("test") || location.href.includes("exam") || location.href.includes("prüfung")) return;
+		// if (location.href.includes("quiz") || location.href.includes("feedback") || location.href.includes("test") || location.href.includes("exam") || location.href.includes("prüfung")) return;
 
 
 		//the following code is used to skip useless buttons and switch to english mode
@@ -52,13 +52,19 @@ window.onload = function () {
 			try { document.querySelectorAll('a[href="index.jsp"]')[0].click(); } catch { }
 		}
 
-		if (buttons && location.href.includes("https://www.lehrbetrieb.ethz.ch/myStudies/login.view")) {
+		if (english && location.href.includes("https://www.lehrbetrieb.ethz.ch/myStudies/studWillkommen.view")) {
 			console.log('switching to english');
 			try { document.querySelectorAll('a[href="?lang=en"].engl')[0].click(); } catch { }
 			await sleep(400);
+		}
+
+		if (buttons && location.href.includes("https://www.lehrbetrieb.ethz.ch/myStudies/login.view")) {
 			console.log('skipping useless button');
+			await sleep(400);
 			try { document.querySelectorAll('input[value="Start"]')[0].click(); } catch { }
 		}
+
+
 
 
 		if (english && location.href.includes("https://moodle-app2.let.ethz.ch/")) {
