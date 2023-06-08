@@ -17,5 +17,8 @@ You can toggle those features above by clicking on the extension's icon
 
 
 
-# How to install
+# How to install on chrome
 Download the repo, extract the zip, go to your browser extensions, enable developer mode, click "load unpacked" and select the extracted folder
+
+# How to install on firefox
+Download the repo, go to about:debugging#/runtime/this-firefox then click "load temporary addon" and open the zip
