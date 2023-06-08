@@ -50,6 +50,7 @@ window.onload = function () {
 			await sleep(400);
 			console.log('skipping useless button');
 			try { document.querySelectorAll('a[href="index.jsp"]')[0].click(); } catch { }
+			try { document.querySelectorAll('a[href="index_en.jsp"]')[0].click(); } catch { }
 		}
 
 		if (english && location.href.includes("https://www.lehrbetrieb.ethz.ch/myStudies/studWillkommen.view")) {
