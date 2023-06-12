@@ -25,20 +25,20 @@ async function onload() {
             console.log(rate);
             paella.player.videoContainer.setPlaybackRate(rate);
         }
-        else if (e.keyCode == '37') {
-            // left arrow
-            paella.player.videoContainer.currentTime()
-                .then(function (currentTime) {
-                    paella.player.videoContainer.seekToTime(currentTime + 0);
-                });
-        }
-        else if (e.keyCode == '39') {
-            // right arrow
-            paella.player.videoContainer.currentTime()
-                .then(function (currentTime) {
-                    paella.player.videoContainer.seekToTime(currentTime - 0);
-                });
-        }
+        // else if (e.keyCode == '37') {
+        //     // left arrow
+        //     paella.player.videoContainer.currentTime()
+        //         .then(function (currentTime) {
+        //             paella.player.videoContainer.seekToTime(currentTime + 0);
+        //         });
+        // }
+        // else if (e.keyCode == '39') {
+        //     // right arrow
+        //     paella.player.videoContainer.currentTime()
+        //         .then(function (currentTime) {
+        //             paella.player.videoContainer.seekToTime(currentTime - 0);
+        //         });
+        // }
 
     }
 

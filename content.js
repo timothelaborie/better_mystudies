@@ -46,7 +46,6 @@ window.onload = function () {
 		//the following code is used to skip useless buttons and switch to english mode
 		if (english && location.href.includes("https://www.lehrbetrieb.ethz.ch/myStudies/studSessionException.view")) {
 			// console.log('switching to english');
-			// try { document.querySelectorAll('a[href="?lang=en"].engl')[0].click(); } catch { }
 			await sleep(400);
 			console.log('skipping useless button');
 			try { document.querySelectorAll('a[href="index.jsp"]')[0].click(); } catch { }
@@ -65,27 +64,14 @@ window.onload = function () {
 			try { document.querySelectorAll('input[value="Start"]')[0].click(); } catch { }
 		}
 
-
-
-
 		if (english && location.href.includes("https://moodle-app2.let.ethz.ch/")) {
 			console.log('moodle english');
 			var page_is_german = false;
-			//go through every element with class "media-body" and check if it contains "Startseite" (broken)
-			// var elements = document.getElementsByClassName("media-body");
-			// for (var i = 0; i < elements.length; i++) {
-			// 	if (elements[i].innerText.includes("Startseite")) {
-			// 		page_is_german = true;
-			// 	}
-			// }
 
-			//find this element <a role="menuitem" class="nav-link  " href="https://moodle-app2.let.ethz.ch/course/index.php" tabindex="-1">
-			//and check if it contains "Kurssuche"
 			var element = document.querySelectorAll('a[href="https://moodle-app2.let.ethz.ch/course/index.php"]')[0];
 			if(element && element.innerText.includes("Kurssuche")){
 				page_is_german = true;
 			}
-
 
 			if(page_is_german){
 				//go through every element with class "dropdown-item" and check if the title attribute contains "English"
@@ -128,7 +114,6 @@ window.onload = function () {
 				  // Found saved password, use it to fill in the input field
 				  document.querySelectorAll('#userNameInput')[0].value=credential.id;
 				  document.querySelectorAll('#passwordInput')[0].value=credential.password;
-				//   document.querySelectorAll('#submitButton')[0].click();
 
 				} else {
 				  console.log('no saved password');
@@ -140,8 +125,4 @@ window.onload = function () {
 	}
 
 	demo();
-
-
-
-
 }
