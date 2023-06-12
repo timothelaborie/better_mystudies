@@ -3,8 +3,8 @@
 ## Video Player
 Improves the video player that is used for lecture recordings by adding new controls:
 
-up arrow increases speed by 0.25x, up to 2x
-down arrow decreases speed by 0.25x, minimum is 1x
+- up arrow increases speed by 0.25x, up to 2x
+- down arrow decreases speed by 0.25x, minimum is 1x
 
 ## Mystudies and Moodle
 - Clicks on pointless buttons telling you to login (optional)
