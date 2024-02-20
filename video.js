@@ -49,7 +49,7 @@ async function onload() {
     
     $('table tr').each(function() {
         let $firstTd = $(this).find('td:first');
-        
+    
         // Check for "Additional Requirements" and break the loop if found.
         if ($firstTd.text().includes('Additional Requirements')) {
             return false;  // This will break out of the .each loop.
@@ -63,7 +63,10 @@ async function onload() {
     
             // Print the values to the console.
             console.log(`Course: ${courseName}, Grade: ${grade}, Weight: ${weight}`);
-            
+    
+            if(isNaN(grade))
+                return; // best course
+    
             totalGrade += grade;
             weightedTotal += grade * weight;
             totalWeight += weight;
@@ -77,12 +80,15 @@ async function onload() {
             // Print the values to the console.
             console.log(`Course: ${courseName}, Grade: ${grade}, Weight: ${weight}`);
     
+            if(isNaN(grade))
+                return; // best course
+    
             totalGrade += grade;
             weightedTotal += grade * weight;
             totalWeight += weight;
             count++;
         }
-        
+    
     });
     
     let average = totalGrade / count;
@@ -90,7 +96,7 @@ async function onload() {
     
     console.log(`Average: ${average}`);
     console.log(`Weighted Average: ${weightedAverage}`);
-
+    
     text = $("table.tablebox p").text();
     $("table.tablebox p").html(text + "<br>" + `Average: ${average}` + "<br>" + `Weighted Average: ${weightedAverage}`);
 
